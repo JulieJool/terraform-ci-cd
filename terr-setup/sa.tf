@@ -34,3 +34,19 @@ resource "yandex_iam_service_account_static_access_key" "terr-sa-static-key" {
   service_account_id = yandex_iam_service_account.terr-sa.id
   description        = "Static access key for terr-sa"
 }
+
+resource "yandex_iam_service_account_key" "sa_key" {
+  service_account_id = yandex_iam_service_account.terr-sa.id
+  description        = "Key for Terraform provider auth"
+  key_algorithm      = "RSA_4096"  # или другой алгоритм
+}
+
+output "service_account_key_id" {
+  value = yandex_iam_service_account_key.sa_key.id
+  sensitive = true
+}
+
+output "private_key" {
+  value     = yandex_iam_service_account_key.sa_key.private_key
+  sensitive = true
+}
