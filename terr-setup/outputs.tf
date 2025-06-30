@@ -1,5 +1,5 @@
 # Вывод информации о созданном сервисном аккаунте
-output "service_account_key_id" {
+output "service_account_id" {
   description = "ID"
   value       = yandex_iam_service_account.terr-sa.id
 }
