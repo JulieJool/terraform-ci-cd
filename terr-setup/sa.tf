@@ -29,13 +29,8 @@ resource "yandex_resourcemanager_folder_iam_member" "alb-admin-sa" {
   depends_on = [yandex_iam_service_account.terr-sa]
 }
 
-/*# Создание статического ключа доступа для сервисного аккаунта
+# Создание статического ключа доступа для сервисного аккаунта
 resource "yandex_iam_service_account_static_access_key" "terr-sa-static-key" {
   service_account_id = yandex_iam_service_account.terr-sa.id
   description        = "Static access key for terr-sa"
-}*/
-resource "yandex_iam_service_account_key" "terr-sa" {
-  service_account_id = yandex_iam_service_account.terr-sa.id
-  description        = "Key for Terraform provider auth"
-  key_algorithm      = "RSA_4096"  # или другой алгоритм
 }
