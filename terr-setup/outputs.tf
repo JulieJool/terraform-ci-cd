@@ -1,3 +1,7 @@
+output "remote_state_attributes" {
+  value = yandex_iam_service_account.outputs
+}
+
 # Вывод информации о созданном сервисном аккаунте
 output "service_account_id" {
   description = "ID"
