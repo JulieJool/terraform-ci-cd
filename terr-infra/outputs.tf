@@ -17,10 +17,10 @@ output "node_ips" {
   ]
 }
 
-# Получение информации о мастер-ноде через data-источник
+/*# Получение информации о мастер-ноде через data-источник
 data "yandex_kubernetes_cluster" "k8s_cluster" {
   cluster_id = yandex_kubernetes_cluster.k8s_cluster.id
-}
+}*/
 
 output "master_details" {
   description = "Details of the regional Kubernetes master, including IP addresses and locations"
