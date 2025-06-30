@@ -4,5 +4,5 @@ data "yandex_kubernetes_cluster" "k8s_cluster" {
 
 output "kubeconfig" {
   description = "Kubeconfig for the Kubernetes cluster"
-  value       = data.yandex_kubernetes_cluster.k8s_cluster.kubeconfig
+  value = data.yandex_kubernetes_cluster.k8s_cluster.kubernetes_config
 }
