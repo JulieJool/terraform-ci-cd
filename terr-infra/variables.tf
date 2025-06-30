@@ -19,11 +19,11 @@ variable "sa_name" {
   default     = "terr-sa"
 }
 
-variable "service_account_key_json" {
+/*variable "service_account_key_json" {
   description = "Yandex Cloud Service Account Key in JSON format"
   type        = string
   sensitive   = true
-}
+}*/
 
 variable "vpc_name" {
   description = "VPC name"
