@@ -1,5 +1,5 @@
 /*locals {
-  service_account_id = jsondecode(var.service_account_key_json).service_account_id
+  service_account_id = jsondecode(var.service_account_key_file).service_account_id
 }*/
 
 # Локальная переменная для списка subnet_ids
