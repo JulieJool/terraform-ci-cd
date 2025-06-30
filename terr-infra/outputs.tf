@@ -23,15 +23,9 @@ data "yandex_kubernetes_cluster" "k8s_cluster" {
 }*/
 
 output "master_details" {
-  description = "Details of the regional Kubernetes master, including IP addresses and locations"
   value = {
-    external_endpoint = data.yandex_kubernetes_cluster.k8s_cluster.master.endpoints.external_v4_endpoint
-    internal_endpoint = data.yandex_kubernetes_cluster.k8s_cluster.master.endpoints.internal_v4_endpoint
-    locations         = [
-      for loc in data.yandex_kubernetes_cluster.k8s_cluster.master.locations : {
-        zone      = loc.zone_id
-        subnet_id = loc.subnet_id
-      }
-    ]
+    external_endpoint = data.yandex_kubernetes_cluster.k8s_cluster.master[0].endpoints.external_v4_endpoint
+    internal_endpoint = data.yandex_kubernetes_cluster.k8s_cluster.master[0].endpoints.internal_v4_endpoint
+    locations         = [for loc in data.yandex_kubernetes_cluster.k8s_cluster.master : loc.locations]
   }
 }
