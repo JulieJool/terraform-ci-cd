@@ -28,7 +28,7 @@ resource "yandex_kubernetes_cluster" "k8s_cluster" {
     public_ip = true # Обеспечивает доступ к мастеру из интернета
   }
 
-  /*service_account_id      = jsondecode(var.service_account_key_json).service_account_id
-  node_service_account_id = jsondecode(var.service_account_key_json).service_account_id*/
+  service_account_id      = jsondecode(var.service_account_key_json).service_account_id
+  node_service_account_id = jsondecode(var.service_account_key_json).service_account_id
   depends_on              = [yandex_vpc_subnet.subnet]
 }
