@@ -1,7 +1,12 @@
 # Вывод информации о созданном сервисном аккаунте
+output "service_account_key_id" {
+  description = "ID of the key"
+  value       = yandex_iam_service_account.terr-sa.id
+}
+
 output "service_account_id" {
   description = "ID of the created service account"
-  value       = yandex_iam_service_account.terr-sa.id
+  value       = yandex_iam_service_account.terr-sa.service_account_id
 }
 
 output "service_account_name" {
