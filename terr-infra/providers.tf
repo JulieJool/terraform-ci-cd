@@ -41,11 +41,11 @@ data "terraform_remote_state" "setup" {
 }
 
 provider "yandex" {
-  service_account_key_file =({
-    service_account_id   = data.terraform_remote_state.setup.outputs.service_account_id
-    private_key          =  jsonencode(data.terraform_remote_state.setup.outputs.secret_key)
+  service_account_key_file = jsonencode({
+    service_account_id = data.terraform_remote_state.setup.outputs.service_account_id
+    private_key       = data.terraform_remote_state.setup.outputs.secret_key
   })
-  cloud_id                 = var.cloud_id
-  folder_id                = var.folder_id
-  zone                     = var.default_zone
+  cloud_id    = var.cloud_id
+  folder_id   = var.folder_id
+  zone        = var.default_zone
 }
