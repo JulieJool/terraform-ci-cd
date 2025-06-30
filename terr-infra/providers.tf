@@ -53,9 +53,9 @@ data "terraform_remote_state" "setup" {
 
 provider "yandex" {
   service_account_key_file = jsonencode({
-    id                  = "manual-key-id"  # произвольный ID, если нет в outputs
+    id                  = data.terraform_remote_state.setup.outputs.service_account_key_id
     service_account_id  = data.terraform_remote_state.setup.outputs.service_account_id
-    private_key         = data.terraform_remote_state.setup.outputs.secret_key
+    private_key         = data.terraform_remote_state.setup.outputs.private_key
   })
   cloud_id    = var.cloud_id
   folder_id   = var.folder_id
