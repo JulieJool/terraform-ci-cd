@@ -6,7 +6,7 @@ terraform {
   }
   required_version = ">=1.8.4"
 
-  backend "s3" {
+  /*backend "s3" {
     bucket   = "terraform-state-bucket-of-julia-teplov"
     key      = "terraform.tfstate"
     region   = "ru-central1"
@@ -17,7 +17,7 @@ terraform {
     skip_credentials_validation = true
     skip_metadata_api_check     = true
     skip_requesting_account_id  = true
-  }
+  }*/
 
 }
 
