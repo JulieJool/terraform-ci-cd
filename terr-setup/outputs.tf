@@ -31,13 +31,3 @@ output "secret_key" {
   value     = yandex_iam_service_account_static_access_key.terr-sa-static-key.secret_key
   sensitive = true
 }
-
-output "service_account_key_id" {
-  value = yandex_iam_service_account_key.sa_key.id
-  sensitive = true
-}
-
-output "private_key" {
-  value     = yandex_iam_service_account_key.sa_key.private_key
-  sensitive = true
-}
