@@ -40,11 +40,23 @@ data "terraform_remote_state" "setup" {
   }
 }
 
-provider "yandex" {
+/*provider "yandex" {
   service_account_key_file = jsonencode({
     service_account_id = data.terraform_remote_state.setup.outputs.service_account_key_id
     public_key = data.terraform_remote_state.setup.outputs.access_key
     private_key = data.terraform_remote_state.setup.outputs.secret_key
+  })
+  cloud_id    = var.cloud_id
+  folder_id   = var.folder_id
+  zone        = var.default_zone
+}*/
+
+provider "yandex" {
+  service_account_key_file = jsonencode({
+    id                  = data.terraform_remote_state.setup.outputs.service_account_key_id
+    service_account_id  = data.terraform_remote_state.setup.outputs.service_account_id
+    private_key         = data.terraform_remote_state.setup.outputs.secret_key
+    created_at          = data.terraform_remote_state.setup.outputs.created_at
   })
   cloud_id    = var.cloud_id
   folder_id   = var.folder_id
