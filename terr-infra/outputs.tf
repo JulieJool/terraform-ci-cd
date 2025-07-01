@@ -4,7 +4,7 @@ output "kubernetes_cluster_id" {
   value       = yandex_kubernetes_cluster.k8s_cluster.id
 }
 
-*/# Получение информации о нодах через data-источник
+/*# Получение информации о нодах через data-источник
 data "yandex_kubernetes_node_group" "node_group" {
   node_group_id = yandex_kubernetes_node_group.node_group.id
 }*/
