@@ -1,7 +1,13 @@
-# Получение информации о нодах через data-источник
+# Вывод ID созданного кластера
+output "kubernetes_cluster_id" {
+  description = "ID of the created Kubernetes cluster"
+  value       = yandex_kubernetes_cluster.k8s_cluster.id
+}
+
+*/# Получение информации о нодах через data-источник
 data "yandex_kubernetes_node_group" "node_group" {
   node_group_id = yandex_kubernetes_node_group.node_group.id
-}
+}*/
 
 /*output "node_ips" {
   description = "IP addresses and other details of the Kubernetes nodes"
