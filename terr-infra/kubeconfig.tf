@@ -8,7 +8,7 @@ output "kubeconfig" {
 }*/
 
 
-resource "null_resource" "get_kubeconfig" {
+/*resource "null_resource" "get_kubeconfig" {
   triggers = {
     cluster_id = yandex_kubernetes_cluster.k8s_cluster.id
   }
@@ -20,4 +20,4 @@ resource "null_resource" "get_kubeconfig" {
   }
 
   depends_on = [yandex_kubernetes_node_group.node_group]
-}
+}*/
