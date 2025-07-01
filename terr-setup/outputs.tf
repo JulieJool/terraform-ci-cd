@@ -10,7 +10,7 @@ output "service_account_name" {
   value       = yandex_iam_service_account.terr-sa.name
 }
 
-# Вывод информации о созданном бакете
+/*# Вывод информации о созданном бакете
 output "bucket_name" {
   description = "Name of the created S3 bucket for Terraform state storage"
   value       = yandex_storage_bucket.terraform-state-bucket.bucket
@@ -19,7 +19,7 @@ output "bucket_name" {
 output "bucket_acl" {
   description = "Access Control List (ACL) of the created S3 bucket"
   value       = yandex_storage_bucket.terraform-state-bucket.acl
-}
+}*/
 
 # Выходные переменные для передачи ключа
 output "access_key" {
