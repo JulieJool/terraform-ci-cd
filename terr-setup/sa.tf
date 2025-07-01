@@ -13,6 +13,14 @@ resource "yandex_resourcemanager_folder_iam_member" "editor-sa" {
   depends_on = [yandex_iam_service_account.terr-sa]
 }
 
+# Назначение роли storage.editor
+resource "yandex_resourcemanager_folder_iam_member" "storage-editor-sa" {
+  folder_id = var.folder_id
+  role      = "storage.editor"
+  member    = "serviceAccount:${yandex_iam_service_account.terr-sa.id}"
+  depends_on = [yandex_iam_service_account.terr-sa]
+}
+
 # Назначение роли vpc.publicAdmin
 resource "yandex_resourcemanager_folder_iam_member" "vpc-public-admin-sa" {
   folder_id = var.folder_id
